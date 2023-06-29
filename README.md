@@ -1,4 +1,4 @@
-# spin_wheel
+# Spin Wheel Demo
 
 A Flutter project to demonstrate custom spin wheel animation.
 
