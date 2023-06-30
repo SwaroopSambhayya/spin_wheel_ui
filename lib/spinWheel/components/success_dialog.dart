@@ -31,7 +31,7 @@ class _SuccessDialogState extends State<SuccessDialog> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    Currency curr = widget.prizeContent.getCurrency();
+    String option = widget.prizeContent.getOption();
     return SimpleDialog(
       insetPadding: EdgeInsets.zero,
       backgroundColor: Colors.transparent,
@@ -56,11 +56,11 @@ class _SuccessDialogState extends State<SuccessDialog> {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          "Congratulations! you won the 0.002 ${describeEnum(curr)}",
+                          "Congratulations! you have won $option coins",
                           style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(
@@ -81,16 +81,19 @@ class _SuccessDialogState extends State<SuccessDialog> {
                 ),
               ),
               Positioned(
-                top: height / 2 - width * 0.44,
+                top: height / 2 - width * 0.36,
                 left: 0,
                 right: 0,
                 child: SizedBox(
-                    width: width * 0.5,
-                    height: width * 0.4,
-                    child: widget.prizeContent),
+                  width: width * 0.2,
+                  height: width * 0.3,
+                  child: Image.asset(
+                    "lib/assets/prizes/coin.png",
+                  ),
+                ),
               ),
               Positioned(
-                top: height / 2 - width * 0.44,
+                top: height / 2 - width * 0.36,
                 left: 0,
                 right: 0,
                 child: Shimmer.fromColors(
@@ -98,9 +101,11 @@ class _SuccessDialogState extends State<SuccessDialog> {
                   loop: 6,
                   highlightColor: Colors.white,
                   child: SizedBox(
-                    width: width * 0.5,
-                    height: width * 0.4,
-                    child: widget.prizeContent,
+                    width: width * 0.2,
+                    height: width * 0.3,
+                    child: Image.asset(
+                      "lib/assets/prizes/coin.png",
+                    ),
                   ),
                 ),
               ),

@@ -3,16 +3,15 @@ import 'package:spin_wheel/const.dart';
 
 class PrizeContent extends StatelessWidget {
   final Widget content;
-  final Currency currency;
-  const PrizeContent(
-      {super.key, required this.content, required this.currency});
+  final String option;
+  const PrizeContent({super.key, required this.content, required this.option});
 
-  Currency getCurrency() {
-    return currency;
+  String getOption() {
+    return option;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Hero(tag: currency, child: content);
+    return Hero(tag: option, child: content);
   }
 }

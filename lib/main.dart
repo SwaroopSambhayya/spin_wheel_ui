@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:spin_wheel/spinWheel/spin_wheel.dart';
 
 void main() {
@@ -17,7 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Spin Wheel',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+          textTheme: GoogleFonts.coinyTextTheme(),
+          colorScheme: const ColorScheme.dark()),
       home: const MyHomePage(title: 'Spin Wheel'),
     );
   }
